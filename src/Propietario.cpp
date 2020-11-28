@@ -11,7 +11,7 @@ propietario::propietario(string pl, string n, string dom, string pr)
     setDomicilio(dom);
 }
 
-propietario::propietario(string all)
+propietario::propietario(const std::string &all)
 {
     int len(all.length());
     int i(0), j(0), opc(0);
@@ -119,7 +119,7 @@ string propietario::getProvincia()
     return helper;
 }
 
-char *propietario::getCharPlaca()
+string propietario::getPlaca()
 {
     return this->placa;
 }
