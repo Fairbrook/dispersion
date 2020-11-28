@@ -21,7 +21,7 @@ public:
     std::string getDomicilio();
     std::string getProvincia();
 
-    char *getPlaca();
+    char *getCharPlaca();
 
 private:
     char placa[12];
