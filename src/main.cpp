@@ -1,11 +1,11 @@
 #include <iostream>
+#include "Menu.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hola Mundo";
-    int a;
-    cin >> a;
+    Menu menu;
+    menu.startMenu();
     return 0;
 }

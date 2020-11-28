@@ -1,10 +1,10 @@
 #include "Menu.h"
-#include "FileManager.hpp"
 
 using namespace std;
 
 Menu::Menu() {}
-void Menu::startMenu() {
+void Menu::startMenu()
+{
     int opc = 0;
     while (opc != 4)
     {
@@ -12,10 +12,11 @@ void Menu::startMenu() {
         cout << "2- Mostrar los resultados de la función" << endl;
         cout << "3- Mostrar el número de frecuencias" << endl;
         cout << "4- Salir" << endl;
-        cin>> opc;
+        cin >> opc;
         switch (opc)
         {
         case 1:
+            fileManager.readFile(INPUT_FILE);
             break;
 
         case 2:
@@ -23,9 +24,9 @@ void Menu::startMenu() {
 
         case 3:
             break;
-        
+
         default:
             break;
         }
-    }   
+    }
 }

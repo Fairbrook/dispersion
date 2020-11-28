@@ -119,7 +119,7 @@ string propietario::getProvincia()
     return helper;
 }
 
-string propietario::getPlaca()
+char *propietario::getCharPlaca()
 {
     return this->placa;
 }

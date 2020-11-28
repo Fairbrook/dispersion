@@ -28,6 +28,7 @@ int FileManager::dispersionFolk(const string &placa)
     }
     res %= 101;
     res %= 100;
+    return res;
 }
 
 bool FileManager::applyDispersion()
@@ -36,18 +37,22 @@ bool FileManager::applyDispersion()
     {
         directions[dispersionFolk(registry.getPlaca())] = new propietario(registry);
     }
+    return true;
 }
 
 bool FileManager::saveFile(const std::string &filename)
 {
     ofstream file(filename);
-    for (int i{0}; propietario * registry : directions)
+    int i(0);
+    for (propietario * registry : directions)
     {
         file << i << " ";
         file << registry->getPlaca() << '|';
         file << registry->getNombre() << '|';
         file << registry->getDomicilio() << '|';
-        file << registry->getProvincia() << '|\n';
+        file << registry->getProvincia() << "|\n";
+        i++;
     }
     file.close();
+    return true;
 }
