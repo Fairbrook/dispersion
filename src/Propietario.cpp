@@ -1,3 +1,15 @@
+/**
+ * Maestro:
+ * Gracela Lara Lopez
+ * 
+ * Materia:
+ * Estructura de DatosII D03
+ * 
+ * Participantes:
+ * Arturo Carrillo Solórzano 218744333
+ * Josué Yizreel Jauregui Rodríguez 219293556
+ * Kevin Alan Martínez Virgen 219294382
+ */
 #include "Propietario.h"
 
 using namespace std;
