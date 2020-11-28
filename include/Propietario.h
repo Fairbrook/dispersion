@@ -1,14 +1,14 @@
 #ifndef PROPIETARIO_H
 #define PROPIETARIO_H
 
-#include <string>;
+#include <string>
 
 class propietario
 {
 public:
     propietario();
+    propietario(const std::string &);
     propietario(std::string, std::string, std::string, std::string);
-    propietario(std::string);
     ~propietario();
 
     void setPlaca(std::string);
@@ -20,7 +20,6 @@ public:
     std::string getNombre();
     std::string getDomicilio();
     std::string getProvincia();
-
     char *getCharPlaca();
 
 private:
