@@ -39,7 +39,7 @@ void propietario::setPlaca(string pl)
 {
     int len(pl.length());
     int i(0);
-    while (i < 10)
+    while (i < 11)
     {
         if (i >= len)
         {
