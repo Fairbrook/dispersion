@@ -13,32 +13,32 @@
 #ifndef PROPIETARIO_H
 #define PROPIETARIO_H
 
-#include <string>
+#include <string> //incluyo la libreria string
 
-class propietario
+class propietario //clase propietario
 {
 public:
-    propietario();
-    propietario(const std::string &);
-    propietario(std::string, std::string, std::string, std::string);
-    ~propietario();
+    propietario();                                                   //declaracion de construnctor
+    propietario(const std::string &);                                //constructor toma una cadena y la divide de manera que se asigne informacion a cada dato de propietario
+    propietario(std::string, std::string, std::string, std::string); //recibe una cadena por cada dato de propietario para ser asignado
+    ~propietario();                                                  //destructor
 
-    void setPlaca(std::string);
-    void setNombre(std::string);
-    void setDomicilio(std::string);
-    void setProvincia(std::string);
+    void setPlaca(std::string);     //asigna valor al atributo placa
+    void setNombre(std::string);    //asigna valor al atributo nombre
+    void setDomicilio(std::string); //asigna valor al atributo domicilio
+    void setProvincia(std::string); //asigna valor al atributo provincia
 
-    std::string getPlaca();
-    std::string getNombre();
-    std::string getDomicilio();
-    std::string getProvincia();
-    char *getCharPlaca();
+    std::string getPlaca();     //retorna valor de atributo placa como una cadena
+    std::string getNombre();    //retorna valor de atributo nombre
+    std::string getDomicilio(); //retorna valor de atributo domicilio
+    std::string getProvincia(); //retorna valor de atributo provincia
+    char *getCharPlaca();       //retorna valor de atributo placa como un arreglo de caracteres
 
 private:
-    char placa[12];
-    char nombre[30];
-    char domicilio[20];
-    char provincia[20];
+    char placa[12];     //atributo que almacena el valor de place
+    char nombre[30];    //atributro que almcacen a el nombre del propietario
+    char domicilio[20]; //atributo que almacena el domicilio del propietario
+    char provincia[20]; //atributo que almacena la provincia del propietario
 };
 
 #endif
