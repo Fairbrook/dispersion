@@ -17,6 +17,7 @@ void Menu::startMenu()
         {
         case 1:
             fileManager.readFile(INPUT_FILE);
+            fileManager.applyDispersion();
             break;
 
         case 2:

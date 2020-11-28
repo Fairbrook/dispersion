@@ -18,13 +18,13 @@ propietario::propietario(const std::string &all)
 
     string pl = all.substr(j, i - j);
     j = i + 1;
-    i = (all.find('|', i));
+    i = (all.find('|', j));
     string n = all.substr(j, i - j);
     j = i + 1;
-    i = (all.find('|', i));
-    string dom = all.substr(j, i - j);
+    i = (all.find('|', j));
+    string dom = all.substr(j,i-j);
     j = i + 1;
-    i = (all.find('|', i));
+    i = (all.find('|', j));
     string pr = all.substr(j, i - j);
 
     setPlaca(pl);
