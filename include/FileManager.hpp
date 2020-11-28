@@ -21,6 +21,7 @@ public:
     bool readFile(const std::string &);
     bool applyDispersion();
     bool saveFile(const std::string &);
+    bool saveFrequencyToFile(const std::string &);
     std::array<propietario*, 100> getDirections() const { return directions; }
     std::vector<propietario> getResgistries() const { return registries; }
     std::array<short, 100> getFrequency() const { return frequency; }
