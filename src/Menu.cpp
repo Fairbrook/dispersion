@@ -7,6 +7,7 @@ void Menu::startMenu()
 {
     fileManager.readFile(INPUT_FILE);
     std::array<propietario*, 100> resultado;
+    std::array<short, 100> frecuencias;
     int opc = 0;
     while (opc != 4)
     {
@@ -24,7 +25,7 @@ void Menu::startMenu()
         case 2:
             resultado = fileManager.getDirections();
            for (int i = 0; i < resultado.size(); i++)
-           {
+           { 
                 cout<< i << " " << endl;
                if(resultado[i] != nullptr){
                     cout<< resultado[i]->getPlaca() << endl;
@@ -32,12 +33,18 @@ void Menu::startMenu()
                     cout<< resultado[i]->getDomicilio() << endl;
                     cout<< resultado[i]->getProvincia() << endl;
                }
+                cout<< "-----------------------"<< endl;
            }
-           //fileManager.saveFile(DISPERSION_FILE);
+           fileManager.saveFile(DISPERSION_FILE);
             break;
 
         case 3:
-            fileManager.getFrequency();
+            frecuencias = fileManager.getFrequency();
+            for (int i = 0; i < frecuencias.size(); i++)
+           { 
+                cout<< i << " (" << frecuencias[i]<< ")" <<endl;
+           }
+            fileManager.saveFrequencyToFile(FREQUENCIES_FILE);
             break;
 
         default:

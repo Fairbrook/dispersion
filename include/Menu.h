@@ -7,6 +7,7 @@
 #include "Propietario.h"
 #define INPUT_FILE "AUTOS_PRO.txt"
 #define DISPERSION_FILE "DISPERSION_PRO.txt"
+#define FREQUENCIES_FILE "FREQUENCIES_PRO.txt"
 class Menu
 {
 private:
