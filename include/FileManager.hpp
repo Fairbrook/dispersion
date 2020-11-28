@@ -17,7 +17,7 @@ private:
     int dispersionFolk(const std::string &);
 
 public:
-    FileManager(){};
+    FileManager();
     bool readFile(const std::string &);
     bool applyDispersion();
     bool saveFile(const std::string &);
