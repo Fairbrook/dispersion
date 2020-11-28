@@ -8,6 +8,7 @@ class propietario
 public:
     propietario();
     propietario(std::string, std::string, std::string, std::string);
+    propietario(std::string);
     ~propietario();
 
     void setPlaca(std::string);
@@ -19,6 +20,8 @@ public:
     std::string getNombre();
     std::string getDomicilio();
     std::string getProvincia();
+
+    char *getPlaca();
 
 private:
     char placa[12];
