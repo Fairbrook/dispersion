@@ -16,16 +16,16 @@ propietario::propietario(const std::string &all)
     int i(all.find('|', 0));
     int j(0);
 
-    string pl = all.substr(j, i);
-    j = i;
+    string pl = all.substr(j, i - j);
+    j = i + 1;
     i = (all.find('|', i));
-    string n = all.substr(j, i);
-    j = i;
+    string n = all.substr(j, i - j);
+    j = i + 1;
     i = (all.find('|', i));
-    string dom = all.substr(j, i);
-    j = i;
+    string dom = all.substr(j, i - j);
+    j = i + 1;
     i = (all.find('|', i));
-    string pr = all.substr(j, i);
+    string pr = all.substr(j, i - j);
 
     setPlaca(pl);
     setNombre(n);
