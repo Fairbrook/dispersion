@@ -2,7 +2,7 @@
 
 using namespace std;
 
-FileManager::FileManager()
+FileManager::FileManager() : directions()
 {
     for (int i = 0; i < 100; i++)
     {
@@ -61,11 +61,27 @@ bool FileManager::saveFile(const std::string &filename)
     for (propietario *registry : directions)
     {
         file << i << " ";
-        file << registry->getPlaca() << '|';
-        file << registry->getNombre() << '|';
-        file << registry->getDomicilio() << '|';
-        file << registry->getProvincia() << "|\n";
+        if (registry != nullptr)
+        {
+            file << registry->getPlaca() << '|';
+            file << registry->getNombre() << '|';
+            file << registry->getDomicilio() << '|';
+            file << registry->getProvincia() << "|";
+        }
+        file << '\n';
         i++;
+    }
+    file.close();
+    return true;
+}
+
+bool FileManager::saveFrequencyToFile(const string &filename)
+{
+    ofstream file(filename);
+    int i(0);
+    for (short f : frequency)
+    {
+        file << i << " (" << f << ")\n";
     }
     file.close();
     return true;
