@@ -3,12 +3,50 @@
 using namespace std;
 
 propietario::propietario() {}
+
 propietario::propietario(string pl, string n, string dom, string pr)
 {
     setPlaca(pl);
     setNombre(n);
     setDomicilio(dom);
 }
+
+propietario::propietario(string all)
+{
+    int len(all.length());
+    int i(0), j(0), opc(0);
+    char helper[30];
+    while (i < len)
+    {
+        if (all[i] == '|')
+        {
+            string aux(helper);
+            switch (opc)
+            {
+            case 0:
+                setPlaca(aux);
+                break;
+            case 1:
+                setNombre(aux);
+                break;
+            case 2:
+                setDomicilio(aux);
+            case 3:
+                setProvincia(aux);
+            default:
+                break;
+            }
+            opc++;
+            j = 0;
+        }
+        else
+        {
+            helper[j] = all[i];
+        }
+        i++;
+    }
+}
+
 propietario::~propietario() {}
 
 void propietario::setPlaca(string pl)
@@ -79,4 +117,9 @@ string propietario::getProvincia()
 {
     string helper(provincia);
     return helper;
+}
+
+char *propietario::getCharPlaca()
+{
+    return this->placa;
 }
