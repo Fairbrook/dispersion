@@ -15,6 +15,7 @@ bool FileManager::readFile(const string &filename)
         getline(file, registry);
         registries.push_back(propietario(registry));
     }
+    file.close();
     return true;
 }
 
@@ -35,4 +36,18 @@ bool FileManager::applyDispersion()
     {
         directions[dispersionFolk(registry.getPlaca())] = new propietario(registry);
     }
+}
+
+bool FileManager::saveFile(const std::string &filename)
+{
+    ofstream file(filename);
+    for (int i{0}; propietario * registry : directions)
+    {
+        file << i << " ";
+        file << registry->getPlaca() << '|';
+        file << registry->getNombre() << '|';
+        file << registry->getDomicilio() << '|';
+        file << registry->getProvincia() << '|\n';
+    }
+    file.close();
 }

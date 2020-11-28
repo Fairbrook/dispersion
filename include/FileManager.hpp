@@ -2,6 +2,7 @@
 #define FILE_MANAGER_INCLUDE_H
 
 #include <string>
+#include <sstream>
 #include <array>
 #include <vector>
 #include <fstream>

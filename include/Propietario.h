@@ -20,6 +20,7 @@ public:
     std::string getNombre();
     std::string getDomicilio();
     std::string getProvincia();
+    char *getCharPlaca();
 
 private:
     char placa[12];
