@@ -13,38 +13,34 @@ propietario::propietario(string pl, string n, string dom, string pr)
 
 propietario::propietario(const std::string &all)
 {
-    int len(all.length());
-    int i(0), j(0), opc(0);
-    char helper[30];
-    while (i < len)
+    const int len(all.length());
+    char *str;
+    strncpy(str, all.c_str(), len);
+    char *token = strtok(str, "|");
+
+    int opc(0);
+    while (token != NULL)
     {
-        if (all[i] == '|')
+        string helper(token);
+        switch (opc)
         {
-            string aux(helper);
-            switch (opc)
-            {
-            case 0:
-                setPlaca(aux);
-                break;
-            case 1:
-                setNombre(aux);
-                break;
-            case 2:
-                setDomicilio(aux);
-            case 3:
-                setProvincia(aux);
-            default:
-                break;
-            }
-            opc++;
-            j = 0;
+        case 0:
+            setPlaca(helper);
+            break;
+        case 1:
+            setNombre(helper);
+            break;
+        case 2:
+            setDomicilio(helper);
+            break;
+        case 3:
+            setProvincia(helper);
+            break;
+        default:
+            break;
         }
-        else
-        {
-            helper[j] = all[i];
-            j++;
-        }
-        i++;
+        token = strtok(NULL, "|");
+        opc++;
     }
 }
 
@@ -54,7 +50,7 @@ void propietario::setPlaca(string pl)
 {
     int len(pl.length());
     int i(0);
-    while (i < 12)
+    while (i < 10)
     {
         if (i >= len)
         {
@@ -67,33 +63,40 @@ void propietario::setPlaca(string pl)
 
         i++;
     }
+    placa[i] = '\0';
 }
 
 void propietario::setNombre(string n)
 {
     int len(n.length());
-    for (int i = 0; i < len; i++)
+    int i;
+    for (i = 0; i < len; i++)
     {
         this->nombre[i] = n[i];
     }
+    nombre[i] = '\0';
 }
 
 void propietario::setDomicilio(string dom)
 {
     int len(dom.length());
-    for (int i = 0; i < len; i++)
+    int i;
+    for (i = 0; i < len; i++)
     {
         this->domicilio[i] = dom[i];
     }
+    domicilio[i] = '\0';
 }
 
 void propietario::setProvincia(string pr)
 {
     int len(pr.length());
-    for (int i = 0; i < len; i++)
+    int i;
+    for (i = 0; i < len; i++)
     {
         this->provincia[i] = pr[i];
     }
+    provincia[i] = '\0';
 }
 
 string propietario::getNombre()
