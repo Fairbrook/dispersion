@@ -33,7 +33,7 @@ int FileManager::dispersionFolk(const string &placa)
     int res(0);
     for (int i = 0; i < 12; i += 2)
     {
-        res = (res + placa.at(i) * 0x100 + placa.at(i + 1)) % 20000;
+        res = (res + placa[i] * 0x100 + placa[i + 1]) % 20000;
     }
     res %= 101;
     res %= 100;
