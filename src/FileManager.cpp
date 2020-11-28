@@ -179,6 +179,8 @@ bool FileManager::saveFrequencyToFile(const string &filename)
     {
         //Guarda la frecuencia en el archivo
         file << i << " (" << f << ")\n";
+        //Aumentar el indice en uno
+        i++;
     }
     //Cierra el archivo
     file.close();
