@@ -28,7 +28,7 @@ bool FileManager::readFile(const string &filename)
     return true;
 }
 
-int FileManager::dispersionFolk(const string &placa)
+int FileManager::dispersionFolk(char *placa)
 {
     int res(0);
     for (int i = 0; i < 12; i += 2)
@@ -44,7 +44,7 @@ bool FileManager::applyDispersion()
 {
     for (propietario registry : registries)
     {
-        int index = dispersionFolk(registry.getPlaca());
+        int index = dispersionFolk(registry.getCharPlaca());
         if (directions[index] == nullptr)
         {
             directions[index] = new propietario(registry);

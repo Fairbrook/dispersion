@@ -14,7 +14,7 @@ private:
     std::array<propietario*, 100> directions;
     std::vector<propietario> registries;
     std::array<short, 100> frequency;
-    int dispersionFolk(const std::string &);
+    int dispersionFolk(char *);
 
 public:
     FileManager();
