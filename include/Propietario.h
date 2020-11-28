@@ -1,10 +1,7 @@
 #ifndef PROPIETARIO_H
 #define PROPIETARIO_H
 
-#include <sstream>
 #include <string>
-#include <stdio.h>
-#include <cstring>
 
 class propietario
 {

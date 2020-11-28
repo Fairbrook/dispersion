@@ -13,35 +13,24 @@ propietario::propietario(string pl, string n, string dom, string pr)
 
 propietario::propietario(const std::string &all)
 {
-    const int len(all.length());
-    char *str;
-    strncpy(str, all.c_str(), len);
-    char *token = strtok(str, "|");
+    int i(all.find('|', 0));
+    int j(0);
 
-    int opc(0);
-    while (token != NULL)
-    {
-        string helper(token);
-        switch (opc)
-        {
-        case 0:
-            setPlaca(helper);
-            break;
-        case 1:
-            setNombre(helper);
-            break;
-        case 2:
-            setDomicilio(helper);
-            break;
-        case 3:
-            setProvincia(helper);
-            break;
-        default:
-            break;
-        }
-        token = strtok(NULL, "|");
-        opc++;
-    }
+    string pl = all.substr(j, i);
+    j = i;
+    i = (all.find('|', i));
+    string n = all.substr(j, i);
+    j = i;
+    i = (all.find('|', i));
+    string dom = all.substr(j, i);
+    j = i;
+    i = (all.find('|', i));
+    string pr = all.substr(j, i);
+
+    setPlaca(pl);
+    setNombre(n);
+    setDomicilio(dom);
+    setProvincia(pr);
 }
 
 propietario::~propietario() {}
