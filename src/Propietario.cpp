@@ -43,6 +43,7 @@ propietario::propietario(const std::string &all)
         {
             helper[j] = all[i];
         }
+        j++;
         i++;
     }
 }
