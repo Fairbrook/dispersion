@@ -42,8 +42,8 @@ propietario::propietario(const std::string &all)
         else
         {
             helper[j] = all[i];
+            j++;
         }
-        j++;
         i++;
     }
 }
