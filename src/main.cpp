@@ -18,7 +18,7 @@ using namespace std;
 
 int main()
 {
-    Menu menu;
-    menu.startMenu();
+    Menu menu; // crea objeto de menu
+    menu.startMenu(); // corre el menu
     return 0;
 }

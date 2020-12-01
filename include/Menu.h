@@ -23,12 +23,12 @@
 class Menu
 {
 private:
-    FileManager fileManager;
-    propietario propietarioObj;
+    FileManager fileManager; // objeto de file manager
+    propietario propietarioObj; // objeto de propietario
 
 public:
     Menu();
-    void startMenu();
+    void startMenu(); // Funcion de menu
 };
 
 #endif
